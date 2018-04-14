@@ -5,7 +5,7 @@
     //if user clicked register button
     if(isset($_POST)){
         //Escape special characters in string first
-        $name = mysqli_real_escape_string($conn, $_POST['name']);
+        $fullname = mysqli_real_escape_string($conn, $_POST['fullname']);
         $username = mysqli_real_escape_string($conn, $_POST['username']);
         $email = mysqli_real_escape_string($conn, $_POST['email']);
         $password = mysqli_real_escape_string($conn, $_POST['password']);
@@ -17,7 +17,7 @@
         $result = $conn->query($sql);
 
         if($result->num_rows == 0){
-            $sql = "INSERT INTO users(name, username, email, password) VALUES('$name', '$username', '$email', '$password')";
+            $sql = "INSERT INTO users(fullname, username, email, password) VALUES('$fullname', '$username', '$email', '$password')";
             if($conn->query($sql)===TRUE){
                 $_SESSION['registerCompleted'] = true;
                 header("Location: login.php");

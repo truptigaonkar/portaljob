@@ -38,7 +38,7 @@ session_start();
       if (isset($_SESSION['registerError'])) {
         ?>
         <div class="alert alert-warning">
-          Email Already Exist! Please Choose Another Email.....
+        <p class="text-center">Email Already Exist! Please Choose Another Email.....</p>
         </div>
       <?php
       unset($_SESSION['registerError']);
@@ -46,7 +46,7 @@ session_start();
     ?>
 
       <div class="form-group has-feedback">
-        <input type="name" class="form-control" id="name" name="name" placeholder="Name" required="">
+        <input type="fullname" class="form-control" id="fullname" name="fullname" placeholder="Fullname" required="">
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">

@@ -30,26 +30,37 @@ session_start();
   <!-- /.login-logo -->
   <div class="login-box-body">
     <p class="login-box-msg">User-Candidate Login</p>
-    <form method="post" action="checklogin.php">
+    <form method="post" action="login-checklogin.php">
 
-      <!-- Register form success -->
-      <?php 
-      if (isset($_SESSION['registerCompleted'])) {
-        ?>
+    <!-- If User have successfully registered then show them this success message -->
+    <?php 
+    if (isset($_SESSION['registerCompleted'])) {
+      ?>
         <div class="alert alert-success">
-          You have registered successfully! Please login ....
+        <p class="text-center">You have registered successfully! Please login ....</p>
         </div>
       <?php
       unset($_SESSION['registerCompleted']);
     }
     ?>
 
+    <!-- If User Failed To log in then show error message. -->
+    <?php 
+    if(isset($_SESSION['loginError'])) {
+      ?>
+      <div class="alert alert-warning">
+        <p class="text-center">Invalid Email/Password! Try Again!</p>
+      </div>
+    <?php
+     unset($_SESSION['loginError']); }
+    ?>      
+  
       <div class="form-group has-feedback">
-        <input type="email" class="form-control" id="email" name="email" placeholder="Email">
+        <input type="email" class="form-control" id="email" name="email" placeholder="Email" required="">
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
-        <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+        <input type="password" class="form-control" id="password" name="password" placeholder="Password" required="">
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
