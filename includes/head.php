@@ -10,7 +10,7 @@
     <title>Job Portal</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom fonts for this template -->
     <link href="assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -37,6 +37,17 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
+            <?php 
+            if (isset($_SESSION['id_user'])) {
+              ?>
+            <p class="text-white"><?php echo $_SESSION["fullname"]; ?></p>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="logout.php">Logout</a> Up</a>
+            </li>
+            <?php
+
+          } else { ?>
+            ?>
             <li class="nav-item mx-0 mx-lg-1">
               <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#portfolio">Company</a>
             </li>
@@ -52,6 +63,9 @@
             <li class="nav-item mx-0 mx-lg-1">
               <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="login.php">Sign In</a>
             </li>
+            <?php 
+          } ?>
+            
           </ul>
         </div>
       </div>

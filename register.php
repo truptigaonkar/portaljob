@@ -38,7 +38,7 @@ session_start();
       if (isset($_SESSION['registerError'])) {
         ?>
         <div class="alert alert-warning">
-        <p class="text-center">Email Already Exist! Please Choose Another Email.....</p>
+        <p class="text-center">Email Already Exist! Choose A Different Email!</p>
         </div>
       <?php
       unset($_SESSION['registerError']);

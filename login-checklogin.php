@@ -21,7 +21,7 @@ if (isset($_POST)) {
             $_SESSION['fullname'] = $row['fullname'];
             $_SESSION['email'] = $row['email'];
             $_SESSION['id_user'] = $row['id_user'];
-            header("Location: user/dashboard.php");
+            header("Location: dashboard.php");
             exit();
         }
     } else {
