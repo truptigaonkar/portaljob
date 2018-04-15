@@ -66,10 +66,7 @@ session_start();
         <p class="text-center"><a href="login.php" class="text-center">Login if registered</a></p>
       </div>
     </form>
-
     <br>
-
-
   </div>
   <!-- /.login-box-body -->
 </div>
