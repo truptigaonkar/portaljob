@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (empty($_SESSION['id_company'])) {
-    header("Location: ../index.php");
+  header("Location: ../index.php");
 }
 include "includes/head.php";
 include "includes/header.php";
@@ -17,7 +17,7 @@ include "includes/header.php";
     if (isset($_SESSION['profileUpdated'])) {
       ?>
         <div class="alert alert-success">
-        <p class="text-center">Your Profile Has Been Updated Successfully!!!!</p>
+        <p class="text-center">Your Company Profile Has Been Updated Successfully!!!!</p>
         </div>
       <?php
       unset($_SESSION['profileUpdated']);

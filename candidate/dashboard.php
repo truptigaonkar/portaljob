@@ -17,7 +17,7 @@ include "includes/header.php";
     if (isset($_SESSION['profileUpdated'])) {
       ?>
         <div class="alert alert-success">
-        <p class="text-center">Your Profile Has Been Updated Successfully!!!!</p>
+        <p class="text-center">Your Candidate Profile Has Been Updated Successfully!!!!</p>
         </div>
       <?php
       unset($_SESSION['profileUpdated']);

@@ -3,7 +3,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
       <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">JobPortal</a>
+        <a class="navbar-brand js-scroll-trigger" href="dashboard.php">JobPortal</a>
         <button class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
           <i class="fa fa-bars"></i>
@@ -14,10 +14,10 @@
           <div class="dropdown">
           <ul class="navbar-nav ml-auto">
             <?php 
-            if (isset($_SESSION['id_user'])) {
+            if (isset($_SESSION['id_company'])) {
               ?>
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <?php echo $_SESSION["fullname"]; ?>
+            <?php echo $_SESSION["companyname"]; ?>
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
               <a class="dropdown-item" href="profile.php">Profile</a>

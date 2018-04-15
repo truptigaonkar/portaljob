@@ -5,15 +5,15 @@ require_once("db.php");
     //if user clicked update profile button
 if (isset($_POST)) {
         //Escape special characters in string first
-    $fullname = mysqli_real_escape_string($conn, $_POST['fullname']);
-    $username = mysqli_real_escape_string($conn, $_POST['username']);
-    $address = mysqli_real_escape_string($conn, $_POST['address']);
-    $country = mysqli_real_escape_string($conn, $_POST['country']);
-    $contact = mysqli_real_escape_string($conn, $_POST['contact']);
-    $qualification = mysqli_real_escape_string($conn, $_POST['qualification']);
+    $companyname = mysqli_real_escape_string($conn, $_POST['companyname']);
+    $companyusername = mysqli_real_escape_string($conn, $_POST['companyusername']);
+    $companyaddress = mysqli_real_escape_string($conn, $_POST['companyaddress']);
+    $companycountry = mysqli_real_escape_string($conn, $_POST['companycountry']);
+    $companycontact = mysqli_real_escape_string($conn, $_POST['companycontact']);
+    $companytype = mysqli_real_escape_string($conn, $_POST['companytype']);
 
     //update query
-    $sql = "UPDATE users SET fullname='$fullname', username='$username', address='$address', country='$country', contact='$contact', qualification='$qualification' WHERE id_user='$_SESSION[id_user]'";
+    $sql = "UPDATE companies SET companyname='$companyname', companyusername='$companyusername', companyaddress='$companyaddress', companycountry='$companycountry', companycontact='$companycontact', companytype='$companytype' WHERE id_company='$_SESSION[id_company]'";
 
     $result = $conn->query($sql);
 

@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (empty($_SESSION['id_company'])) {
-    header("Location: ../index.php");
+  header("Location: ../index.php");
 }
 include "includes/head.php";
 include "includes/header.php";
@@ -20,11 +20,11 @@ require_once "db.php";
   <form method="post" action="profile-update.php">
       <!-- Register form success -->
       <?php 
-        $sql = "SELECT * FROM companies WHERE id_company='$_SESSION[id_company]' ";
-        $result = $conn->query($sql);
-        if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
-                ?>
+      $sql = "SELECT * FROM companies WHERE id_company='$_SESSION[id_company]' ";
+      $result = $conn->query($sql);
+      if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+          ?>
 
       <div class="form-group has-feedback ">
         <input type="companyname" class="form-control" id="companyname" name="companyname" value="<?php echo $row['companyname']; ?>" placeholder="Company Name" required="">
@@ -36,24 +36,24 @@ require_once "db.php";
         <input type="companyemail" class="form-control" id="companyemail" placeholder="Company Email" value="<?php echo $row['companyemail']; ?>" readonly>
       </div>
       <div class="form-group has-feedback">
-        <textarea type="address" class="form-control" id="address" name="address" placeholder="Address" required=""><?php echo $row['address']; ?></textarea>
+        <textarea type="companyaddress" class="form-control" id="companyaddress" name="companyaddress" placeholder="Company Address" required=""><?php echo $row['companyaddress']; ?></textarea>
       </div>
       <div class="form-group has-feedback">
-        <input type="country" class="form-control" id="country" name="country" placeholder="Country" value="<?php echo $row['country']; ?>" required="">
+        <input type="companycountry" class="form-control" id="companycountry" name="companycountry" placeholder="Company Country" value="<?php echo $row['companycountry']; ?>" required="">
       </div>
       <div class="form-group has-feedback">
-        <input type="contact" class="form-control" id="contact" name="contact" placeholder="Contact" value="<?php echo $row['contact']; ?>" required="">
+        <input type="companycontact" class="form-control" id="companycontact" name="companycontact" placeholder="Company Contact" value="<?php echo $row['companycontact']; ?>" required="">
       </div>
       <div class="form-group has-feedback">
-        <input type="qualification" class="form-control" id="qualification" name="qualification" placeholder="Qualification" value="<?php echo $row['qualification']; ?>" required="">
+        <input type="companytype" class="form-control" id="companytype" name="companytype" placeholder="Company Type" value="<?php echo $row['companytype']; ?>" required="">
       </div>
       <div class="form-group has-feedback">
         <button type="submit" class="btn btn-info btn-block btn-flat">Update Profile</button>
       </div>
       <?php 
     }
-}
-?>
+  }
+  ?>
 
     </form>
   </div>
