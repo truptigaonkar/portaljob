@@ -10,7 +10,7 @@ include "includes/header.php";
  <section>
       <div class="container">
         <hr>
-        <h2 class="font-weight-light mb-0">Dashbooard</h2>
+        <h2 class="font-weight-light mb-0">Candidate Dashbooard</h2>
 
             <!-- If User have successfully registered then show them this success message -->
     <?php 
