@@ -18,7 +18,7 @@ require_once "db.php";
   <div class="card-header">Company Profile</div>
   <div class="card-body">
   <form method="post" action="profile-update.php">
-      <!-- Register form success -->
+      <!-- To update the form with old vaulues -->
       <?php 
       $sql = "SELECT * FROM companies WHERE id_company='$_SESSION[id_company]' ";
       $result = $conn->query($sql);
