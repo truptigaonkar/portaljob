@@ -44,6 +44,17 @@ if (isset($_SESSION['jobupdateSuccess'])) {
   unset($_SESSION['jobupdateSuccess']);
 }
 ?>
+<!-- Job Post Deletion Success -->
+<?php 
+if (isset($_SESSION['jobdeleteSuccess'])) {
+  ?>
+    <div class="alert alert-success">
+    <p class="text-center">Deleted Job Post Successfully!!!!</p>
+    </div>
+  <?php
+  unset($_SESSION['jobdeleteSuccess']);
+}
+?>
     <div class="row">
       <div class="col-md-12">
         <div class="card card-info">
@@ -80,7 +91,7 @@ if (isset($_SESSION['jobupdateSuccess'])) {
                   <td><?php echo $row["jobcreatedat"]; ?></td>
                   <td>    
                     <a href="editjobpost.php?id=<?php echo $row["id_jobpost"]; ?>" onclick="return confirm('Are you sure to Edit Jobpost !'); " class="btn btn-primary" >Edit</a>
-                    <a href="student_delete.php?id=<?php echo $row["id_jobpost"]; ?>" onclick="return confirm('Are you sure to Delete Jobpost !'); " class="btn btn-danger" >Delete</a>  
+                    <a href="deletejobpost.php?id=<?php echo $row["id_jobpost"]; ?>" onclick="return confirm('Are you sure to Delete Jobpost !'); " class="btn btn-danger" >Delete</a>  
                   </td>
                   </tr>
                 
