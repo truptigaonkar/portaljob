@@ -16,6 +16,9 @@
             <?php 
             if (isset($_SESSION['id_user'])) {
               ?>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="dashboard.php">Dashboard</a>
+            </li/>  
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <?php echo $_SESSION["fullname"]; ?>
             </button>

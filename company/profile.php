@@ -12,10 +12,10 @@ require_once "db.php";
 <hr>
 <div class="container">
     <div class="row justify-content-center">
-<div class="col-md-6 col-md-offset-4">
+<div class="col-md-8 col-md-offset-4">
 <div class="card">
     
-  <div class="card-header">Profile</div>
+  <div class="card-header">Company Profile</div>
   <div class="card-body">
   <form method="post" action="profile-update.php">
       <!-- Register form success -->
@@ -26,29 +26,50 @@ require_once "db.php";
         while ($row = $result->fetch_assoc()) {
           ?>
 
-      <div class="form-group has-feedback ">
-        <input type="companyname" class="form-control" id="companyname" name="companyname" value="<?php echo $row['companyname']; ?>" placeholder="Company Name" required="">
+      <div class="form-group row">
+        <label class="col-lg-3 col-form-label form-control-label">Company Name</label>
+        <div class="col-lg-9">
+          <input type="companyname" class="form-control" id="companyname" name="companyname" value="<?php echo $row['companyname']; ?>" placeholder="Company Name" required="">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-lg-3 col-form-label form-control-label">Company Username</label>
+        <div class="col-lg-9">
+          <input type="companyusername" class="form-control" id="companyusername" name="companyusername" value="<?php echo $row['companyusername']; ?>" placeholder="Company Username" required="">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-lg-3 col-form-label form-control-label">Company Email</label>
+        <div class="col-lg-9">
+          <input type="companyemail" class="form-control" id="companyemail" name="companyemail" value="<?php echo $row['companyemail']; ?>" placeholder="Company Email" readonly>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-lg-3 col-form-label form-control-label">Company Address</label>
+        <div class="col-lg-9">
+          <textarea type="companyaddress" class="form-control" id="companyaddress" name="companyaddress" placeholder="Company Address" required=""><?php echo $row['companyaddress']; ?></textarea>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-lg-3 col-form-label form-control-label">Company Country</label>
+        <div class="col-lg-9">
+          <input type="companycountry" class="form-control" id="companycountry" name="companycountry" value="<?php echo $row['companycountry']; ?>" placeholder="Company Country" required="">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-lg-3 col-form-label form-control-label">Company Contact</label>
+        <div class="col-lg-9">
+          <input type="companycontact" class="form-control" id="companycontact" name="companycontact" value="<?php echo $row['companycontact']; ?>" placeholder="Company Contact" required="">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-lg-3 col-form-label form-control-label">Company Type</label>
+        <div class="col-lg-9">
+          <input type="companytype" class="form-control" id="companytype" name="companytype" value="<?php echo $row['companytype']; ?>" placeholder="Company Type" required="">
+        </div>
       </div>
       <div class="form-group has-feedback">
-        <input type="companyusername" class="form-control" id="companyusername" name="companyusername" value="<?php echo $row['companyusername']; ?>" placeholder="Company Username" required="">
-      </div>
-      <div class="form-group has-feedback">
-        <input type="companyemail" class="form-control" id="companyemail" placeholder="Company Email" value="<?php echo $row['companyemail']; ?>" readonly>
-      </div>
-      <div class="form-group has-feedback">
-        <textarea type="companyaddress" class="form-control" id="companyaddress" name="companyaddress" placeholder="Company Address" required=""><?php echo $row['companyaddress']; ?></textarea>
-      </div>
-      <div class="form-group has-feedback">
-        <input type="companycountry" class="form-control" id="companycountry" name="companycountry" placeholder="Company Country" value="<?php echo $row['companycountry']; ?>" required="">
-      </div>
-      <div class="form-group has-feedback">
-        <input type="companycontact" class="form-control" id="companycontact" name="companycontact" placeholder="Company Contact" value="<?php echo $row['companycontact']; ?>" required="">
-      </div>
-      <div class="form-group has-feedback">
-        <input type="companytype" class="form-control" id="companytype" name="companytype" placeholder="Company Type" value="<?php echo $row['companytype']; ?>" required="">
-      </div>
-      <div class="form-group has-feedback">
-        <button type="submit" class="btn btn-info btn-block btn-flat">Update Profile</button>
+        <button type="submit" class="btn btn-info btn-block btn-flat">Update Company Profile</button>
       </div>
       <?php 
     }
