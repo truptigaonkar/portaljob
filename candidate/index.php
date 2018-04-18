@@ -1,6 +1,7 @@
 <?php 
 include "includes/head.php";
 include "includes/header.php";
+require_once("db.php");
 ?>
 
 <!-- Header -->
@@ -8,9 +9,32 @@ include "includes/header.php";
       <div class="container">
         <h1 class="text-uppercase mb-0">All JOBS In One Place</h1>
         <h2 class="font-weight-light mb-0">One Search, Global Reach</h2>
-        
       </div>
     </header>
+<br>
+
+  <div class="col-md-12">
+   <h4 class="text-uppercase text-center">Latest Job Posts</h4>
+
+<?php 
+$sql = "SELECT * FROM jobposts ORDER BY Rand() Limit 4";
+$result = $conn->query($sql);
+
+//If Job Post exists then display details of post
+if ($result->num_rows > 0) {
+  while ($row = $result->fetch_assoc()) {
+    ?>
+    <div class="card card-block bg-faded">
+      <h4><?php echo $row['jobtitle']; ?></h4>
+      <p><?php echo $row['jobdescription']; ?></p>        
+  <?php
+
+}
+}
+?>
+</div>   
+  </div>
+
     <!-- Portfolio Grid Section -->
     <section class="portfolio" id="portfolio">
       <div class="container">
