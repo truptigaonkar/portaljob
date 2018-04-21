@@ -12,10 +12,8 @@ require_once("db.php");
       </div>
     </header>
 <br>
-
-  <div class="col-md-12">
-   <h4 class="text-uppercase text-center">Latest Job Posts</h4>
-
+   <h2 class="text-center text-uppercase text-secondary mb-0">Latest Job Posts</h2>
+        <hr class="star-dark mb-5">
 <?php 
 $sql = "SELECT * FROM jobposts ORDER BY Rand() Limit 4";
 $result = $conn->query($sql);
@@ -33,74 +31,32 @@ if ($result->num_rows > 0) {
 }
 ?>
 </div>   
-  </div>
-
     <!-- Portfolio Grid Section -->
     <section class="portfolio" id="portfolio">
       <div class="container">
         <h2 class="text-center text-uppercase text-secondary mb-0">Company</h2>
         <hr class="star-dark mb-5">
         <div class="row">
-          <div class="col-md-6 col-lg-4">
-            <a class="portfolio-item d-block mx-auto" href="#portfolio-modal-1">
-              <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
-                <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
-                  <i class="fa fa-search-plus fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="img/portfolio/cabin.png" alt="">
-            </a>
-          </div>
-          <div class="col-md-6 col-lg-4">
-            <a class="portfolio-item d-block mx-auto" href="#portfolio-modal-2">
-              <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
-                <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
-                  <i class="fa fa-search-plus fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="img/portfolio/cake.png" alt="">
-            </a>
-          </div>
-          <div class="col-md-6 col-lg-4">
-            <a class="portfolio-item d-block mx-auto" href="#portfolio-modal-3">
-              <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
-                <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
-                  <i class="fa fa-search-plus fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="img/portfolio/circus.png" alt="">
-            </a>
-          </div>
-          <div class="col-md-6 col-lg-4">
-            <a class="portfolio-item d-block mx-auto" href="#portfolio-modal-4">
-              <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
-                <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
-                  <i class="fa fa-search-plus fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="img/portfolio/game.png" alt="">
-            </a>
-          </div>
-          <div class="col-md-6 col-lg-4">
-            <a class="portfolio-item d-block mx-auto" href="#portfolio-modal-5">
-              <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
-                <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
-                  <i class="fa fa-search-plus fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="img/portfolio/safe.png" alt="">
-            </a>
-          </div>
-          <div class="col-md-6 col-lg-4">
-            <a class="portfolio-item d-block mx-auto" href="#portfolio-modal-6">
-              <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
-                <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
-                  <i class="fa fa-search-plus fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="img/portfolio/submarine.png" alt="">
-            </a>
-          </div>
+        <div class="col-md-12">
+   
+<?php 
+$sql = "SELECT * FROM companies ORDER BY Rand() Limit 4";
+$result = $conn->query($sql);
+
+//If Job Post exists then display details of post
+if ($result->num_rows > 0) {
+  while ($row = $result->fetch_assoc()) {
+    ?>
+    <div class="card card-block bg-faded">
+      <h4><?php echo $row['companyname']; ?></h4>
+      <p><?php echo $row['companyaddress']; ?></p>        
+  <?php
+
+}
+}
+?>
+</div>   
+  </div>
         </div>
       </div>
     </section>

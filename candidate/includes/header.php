@@ -44,11 +44,15 @@
             <li class="nav-item mx-0 mx-lg-1">
               <div class="dropdown">
                 <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Candidate-Account
+                Accounts
                 </a>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="register.php">Sign Up</a>
-                <a class="dropdown-item" href="login.php">Sign In</a>  
+                  <h4 class="dropdown-header">Candidate</h4>
+                  <a class="dropdown-item" href="register.php">Sign Up</a>     
+                  <a class="dropdown-item" href="login.php">Sign In</a>               
+                  <h4 class="dropdown-header">Company</h4>
+                  <a class="dropdown-item" href="../company/register.php">Sign Up</a>     
+                  <a class="dropdown-item" href="../company/login.php">Sign In</a>
                 </div>
               </div>
             </li>

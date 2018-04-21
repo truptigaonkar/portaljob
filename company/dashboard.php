@@ -90,8 +90,8 @@ if (isset($_SESSION['jobdeleteSuccess'])) {
                   <td><?php echo $row["jobqualification"]; ?></td>
                   <td><?php echo $row["jobcreatedat"]; ?></td>
                   <td>    
-                    <a href="editjobpost.php?id=<?php echo $row["id_jobpost"]; ?>" onclick="return confirm('Are you sure to Edit Jobpost !'); " class="btn btn-primary" >Edit</a>
-                    <a href="deletejobpost.php?id=<?php echo $row["id_jobpost"]; ?>" onclick="return confirm('Are you sure to Delete Jobpost !'); " class="btn btn-danger" >Delete</a>  
+                    <a href="editjobpost.php?id=<?php echo $row["id_jobpost"]; ?>" onclick="return confirm('Are you sure to Edit Jobpost !'); " class="btn btn-primary btn-sm" >Edit</a>
+                    <a href="deletejobpost.php?id=<?php echo $row["id_jobpost"]; ?>" onclick="return confirm('Are you sure to Delete Jobpost !'); " class="btn btn-danger btn-sm" >Delete</a>  
                   </td>
                   </tr>
                 
