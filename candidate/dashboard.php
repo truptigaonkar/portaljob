@@ -10,7 +10,7 @@ include "includes/header.php";
 
 <section>
   <div class="container">
-  <hr>
+  <br>
 <!-- If User have successfully updated profile then show them this success message -->
 <?php 
 if (isset($_SESSION['profileUpdated'])) {
@@ -47,12 +47,12 @@ if (isset($_SESSION['jobapplySuccess'])) {
             <table class="table table-striped table-bordered table-hover">
                 <thead> 
                 <tr> 
-                  <th>Job Title</th>
-                  <th>Job Description</th>
-                  <th>Job Salary</th>
-                  <th>Job Experience</th>
-                  <th>Job Qualification</th>
-                  <th>Job Created At</th>           
+                  <th>Title</th>
+                  <th>Description</th>
+                  <th>Salary</th>
+                  <th>Experience</th>
+                  <th>Qualification</th>
+                  <th>CreatedAt</th>           
                   <th>Action</th>
                   </tr>
                 </thead>                                 
@@ -65,16 +65,14 @@ if (isset($_SESSION['jobapplySuccess'])) {
                     while ($row = $result->fetch_assoc()) {
                       $sql1 = "SELECT * FROM applyjobpost WHERE id_user='$_SESSION[id_user]' AND id_jobpost='$row[id_jobpost]' ";
                       $result1 = $conn->query($sql1);
-
                       ?> 
                       <tr> 
-                  <td><?php echo $row["jobtitle"]; ?></td>
-                 
-                  <td><?php echo $row["jobdescription"]; ?></td>
+                  <td><?php echo $row["jobtitle"]; ?></td>                  
+                  <td><?php echo substr($row["jobdescription"], 0, 50); ?></td>
                   <td><?php echo $row["jobsalary"]; ?></td>
                   <td><?php echo $row["jobexperience"]; ?></td>
                   <td><?php echo $row["jobqualification"]; ?></td>
-                  <td><?php echo $row["jobcreatedat"]; ?></td>
+                  <td><?php echo date("d-M-Y", strtotime($row["jobcreatedat"])); ?></td>
                   <?php
                   if ($result1->num_rows > 0) {
                     ?>

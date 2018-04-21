@@ -10,7 +10,7 @@ include "includes/header.php";
 
 <section>
   <div class="container">
-  <hr>
+  <br>
 <!-- If User have successfully updated profile then show them this success message -->
 <?php 
 if (isset($_SESSION['profileUpdated'])) {
@@ -56,7 +56,7 @@ if (isset($_SESSION['jobdeleteSuccess'])) {
 }
 ?>
     <div class="row">
-      <div class="col-md-12">
+      <div class="">
         <div class="card card-info">
           <div class="card-header"><h4>Job Post <small>Add, View, Edit, Delete</small><a href="createjobpost.php" class="btn btn-primary btn-block btn-xs col-md-2 pull-right">Add Jobpost</a></h4>       
           </div>
@@ -84,11 +84,11 @@ if (isset($_SESSION['jobdeleteSuccess'])) {
                       ?> 
                       <tr> 
                   <td><?php echo $row["jobtitle"]; ?></td>
-                  <td><?php echo $row["jobdescription"]; ?></td>
+                  <td><?php echo substr($row["jobdescription"], 0, 50); ?></td>
                   <td><?php echo $row["jobsalary"]; ?></td>
                   <td><?php echo $row["jobexperience"]; ?></td>
                   <td><?php echo $row["jobqualification"]; ?></td>
-                  <td><?php echo $row["jobcreatedat"]; ?></td>
+                  <td><?php echo date("d-M-Y", strtotime($row["jobcreatedat"])); ?></td>
                   <td>    
                     <a href="editjobpost.php?id=<?php echo $row["id_jobpost"]; ?>" onclick="return confirm('Are you sure to Edit Jobpost !'); " class="btn btn-primary btn-sm" >Edit</a>
                     <a href="deletejobpost.php?id=<?php echo $row["id_jobpost"]; ?>" onclick="return confirm('Are you sure to Delete Jobpost !'); " class="btn btn-danger btn-sm" >Delete</a>  
