@@ -37,6 +37,9 @@ if (isset($_SESSION['jobapplySuccess'])) {
 
     <div class="row">
       <div class="col-md-12">
+      <div>
+        <a href="appliedjobpost.php" class="btn btn-primary btn-lg" >Applied Jobs</a>
+      </div>
         <div class="card card-info">
           <div class="card-header text-center"><h4>All Job Post - Active Jobs</h4>       
           </div>
